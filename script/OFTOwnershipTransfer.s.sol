@@ -26,12 +26,12 @@ contract OFTOwnershipTransfer is Script, L2Constants {
     function run() public {
         vm.startBroadcast();
 
-        wHYPEOFT oft = wHYPEOFT(OFT_ADAPTER_ADDRESS);
+        wHYPEOFT oft = wHYPEOFT(OFT_ADDRESS);
 
-        oft.setDelegate(HYPE_CONTRACT_CONTROLLER);
+        oft.setDelegate(DEPLOYMENT_CONTRACT_CONTROLLER);
         
         // transfer ownership to the contract controller
-        oft.transferOwnership(HYPE_CONTRACT_CONTROLLER);
+        oft.transferOwnership(DEPLOYMENT_CONTRACT_CONTROLLER);
 
         console.log("OFT new owner: %s", oft.owner());
 
