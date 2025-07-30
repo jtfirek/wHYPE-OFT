@@ -9,22 +9,13 @@ import "../src/wHYPEOFTAdapter.sol";
 import "../utils/L2Constants.sol";
 
 
-contract DeployOFTAdapterScript is Script {
-
+contract DeployOFTAdapterScript is Script, L2Constants {
      ICreate3Deployer private CREATE3 = ICreate3Deployer(L2_CREATE3_DEPLOYER);
 
     function run() public {
         vm.startBroadcast();
 
-        bytes memory adapterCreationCode = abi.encodePacked(
-            type(wHYPEOFTAdapter).creationCode, 
-            abi.encode(WRAPPED_HYPE_ADDRESS, HYPE_ENDPOINT, msg.sender)
-        );
-
-        address adapterDeploymentAddress = CREATE3.deployCreate3(
-            keccak256("wHYPE-OFT-Adapter"), 
-            adapterCreationCode
-        );
+        new wHYPEOFTAdapter(WRAPPED_HYPE_ADDRESS, HYPE_ENDPOINT, msg.sender);
 
         vm.stopBroadcast();
     }

@@ -36,12 +36,12 @@ contract L2Constants {
     address constant DEPLOYMENT_USDT0_DVN = 0x3b0531eB02Ab4aD72e7a531180beeF9493a00dD2;
     address[3] DEPLOYMENT_LZ_DVN = [0xc9ca319f6Da263910fd9B037eC3d817A814ef3d8, 0x06559EE34D85a88317Bf0bfE307444116c631b67, 0x3b0531eB02Ab4aD72e7a531180beeF9493a00dD2];
 
-    address constant DEPLOYMENT_CONTRACT_CONTROLLER = address(0);
+    address constant DEPLOYMENT_CONTRACT_CONTROLLER = 0x0E556b9aff11195d8bf35F98134BC76B9b6b14C3;
     /*//////////////////////////////////////////////////////////////
                     
     //////////////////////////////////////////////////////////////*/
 
-    address constant OFT_ADDRESS = 0x0000000000000000000000000000000000000000;
+    address constant OFT_ADDRESS = 0xd83E3d560bA6F05094d9D8B3EB8aaEA571D1864E;
    
     address constant L2_CREATE3_DEPLOYER = 0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed;
     
@@ -51,12 +51,12 @@ contract L2Constants {
     
     // Hyperliquid Constants
     string constant HYPE_RPC_URL = "https://rpc.hyperliquid.xyz/evm";
-    uint32 constant HYPE_EID = 30101;
+    uint32 constant HYPE_EID = 30367;
     address constant WRAPPED_HYPE_ADDRESS = 0x5555555555555555555555555555555555555555;
     address constant HYPE_ENDPOINT = 0x3A73033C0b1407574C76BdBAc67f126f6b4a9AA9;
-    address constant HYPE_CONTRACT_CONTROLLER = address(0);
+    address constant HYPE_CONTRACT_CONTROLLER = 0xaBEEd16B15a18930595A85D96e435Ad2DF8ba8e4;
 
-    address constant OFT_ADAPTER_ADDRESS = 0x0000000000000000000000000000000000000000;
+    address constant OFT_ADAPTER_ADDRESS = 0x2B7E48511ea616101834f09945c11F7d78D9136d;
 
     address constant HYPE_SEND_302 = 0xfd76d9CB0Bac839725aB79127E7411fe71b1e3CA;
     address constant HYPE_RECEIVE_302 = 0x7cacBe439EaD55fa1c22790330b12835c6884a91;

@@ -11,7 +11,7 @@ import "@layerzerolabs/lz-evm-protocol-v2/contracts/interfaces/IMessageLibManage
 import "@layerzerolabs/lz-evm-oapp-v2/contracts/oapp/libs/OptionsBuilder.sol";
 import "@layerzerolabs/lz-evm-oapp-v2/contracts/oapp/interfaces/IOAppOptionsType3.sol";
 
-import "../utils/LayerZeroHelpers.sol";
+import "../utils/L2Constants.sol";
 import "../interfaces/ICreate3Deployer.sol";
 
 import "../src/wHYPEOFT.sol";
@@ -125,12 +125,16 @@ contract DeployOFTScript is Script, L2Constants {
         enforcedOptions.push(EnforcedOptionParam({
             eid: dstEid,
             msgType: 1,
-            options: OptionsBuilder.newOptions().addExecutorLzReceiveOption(170_000, 0)
+            options: OptionsBuilder.newOptions().addExecutorLzReceiveOption(80_000, 0)
         }));
         enforcedOptions.push(EnforcedOptionParam({
             eid: dstEid,
             msgType: 2,
-            options: OptionsBuilder.newOptions().addExecutorLzReceiveOption(170_000, 0)
+            options: OptionsBuilder.newOptions().addExecutorLzReceiveOption(80_000, 0)
         }));
+    }
+
+    function _toBytes32(address addr) public pure returns (bytes32) {
+        return bytes32(uint256(uint160(addr)));
     }
 }
